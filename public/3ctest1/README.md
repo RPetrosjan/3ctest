@@ -22,7 +22,7 @@
 ---------------
  - For installing BD you have dump sql 3ctest.sql
    * run command : `php bin/console doctrine:database:import 3ctest.sql`
- - Config Assets
+ - Config Assets (not necessary)
    * run command : `php bin/console assets:install -e prod`
    * run command : `php bin/console assetic:dump -e prod`
    * run command : `php bin/console translation:update fr --force`
