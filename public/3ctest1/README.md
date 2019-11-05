@@ -7,7 +7,7 @@
 
  * run command:  `git clone https://github.com/RPetrosjan/3ctest.git`
  * change folder: `cd 3ctest/public/3ctest1/`
- * run command: `compose install`
+ * run command: `composer install`
 
 2.Configuration BD
 --------------
