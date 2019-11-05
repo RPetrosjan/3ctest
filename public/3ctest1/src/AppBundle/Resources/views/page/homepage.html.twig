@@ -1,0 +1,33 @@
+{% extends '@App/base.html.twig' %}
+
+ {% block fos_user_content %}
+     <div class="burgerimage">
+         <img src="http://www.festivalclaca.cat/pics/b/21/212721_burger-png.png" alt="burger" title="burger" />
+     </div>
+
+     {% if burger is defined %}
+         <div class="col-sm-12 text-center">
+             <div class="burger">
+                 <div id="idburger" class="hidden">{{ burger.id }}</div>
+                 <h2 class="name">{{ burger.name }}</h2>
+                 <div class="desc">{{ burger.desc }}</div>
+                 <div class="price">
+                    <i class="fas fa-chevron-left"></i>
+                         <span>{{ burger.price|raw }}</span>
+                    <i class="fas fa-chevron-right"></i>
+                 </div>
+                 <div class="supplement">Supplément <span>{{ burger.supp_double }}</span></div>
+              </div>
+         </div>
+     {% endif %}
+
+ {% endblock fos_user_content %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {% javascripts
+        '@AppBundle/Resources/public/js/burger_show.js'
+    %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}

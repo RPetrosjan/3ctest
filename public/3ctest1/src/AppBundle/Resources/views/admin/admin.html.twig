@@ -1,0 +1,82 @@
+{% extends '@App/base.html.twig' %}
+
+
+{% block fos_user_content %}
+
+    <!-- Modal -->
+    {% if burgerForm is not null %}
+    <div class="modal fade" id="burgerFormModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div id="burgerform" class="modal-body">
+                    {% include '@App/form/burgerForm.html.twig' %}
+                </div>
+                <div id="burgerformedit" class="modal-body hidden">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="col-sm-12 text-center">
+        {% if is_granted("ROLE_ADMIN") %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>
+                            {{ 'name'|trans }}
+                        </th>
+                        <th>
+                            {{ 'price'|trans }}
+                        </th>
+                        <th>
+                           {{ 'double'|trans }}
+                        </th>
+                        <th>
+                            {{ 'actions'|trans }}
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="text-center addburger" colspan="4">
+                        <i data-toggle="modal" data-target="#burgerFormModal" title='{{ 'add.new'|trans }}' class="fas fa-plus-circle"></i>
+                    </td>
+                </tr>
+                    {% if allBurgers is not null %}
+                        {% for burger in allBurgers %}
+                            <tr dataid="{{ burger.id }}">
+                                <td>
+                                    <div class="titleburger">{{ burger.name }}</div><span class="description">{{ burger.desc }}</span>
+                                </td>
+                                <td class="text-right">
+                                    <div> {{ burger.price|number_format(2, '.', ',') }} &euro;</div>
+                                </td>
+                                <td class="text-right">
+                                    <div>{{ burger.supp_double }}</div>
+                                </td>
+                                <td>
+                                    <div class="action"><a href="{{ path('removeburger', {'id': burger.id}) }}" title="{{ 'remove'|trans }}" class="fas fa-trash"></a> <i title="{{ 'edit'|trans }}" class="fas fa-wrench"></i></div>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    {% endif %}
+                </tbody>
+            </table>
+
+        {% else %}
+            {% include '@App/block/form_login.html.twig' %}
+        {% endif %}
+
+    </div>
+{% endblock fos_user_content %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {% javascripts
+        '@AppBundle/Resources/public/js/burger_form.js'
+    %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}

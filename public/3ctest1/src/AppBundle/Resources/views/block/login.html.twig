@@ -1,0 +1,12 @@
+
+{% if is_granted("ROLE_ADMIN") %}
+    {% if app.request.get('_route') != "adminPage" %}
+        <div><a href="{{ path('adminPage') }}">{{ 'admin'|trans({}, 'FOSUserBundle') }}</a></div>
+    {% endif %}
+    {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+    <a href="{{ path('fos_user_security_logout') }}">
+        {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+    </a>
+{% else %}
+    <a href="{{ path('adminPage') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+{% endif %}

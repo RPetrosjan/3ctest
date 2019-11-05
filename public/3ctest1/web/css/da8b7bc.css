@@ -1,0 +1,210 @@
+body, .modal-content{
+    font-family: 'Bree Serif', serif;
+    background-image: url('http://demo.themewinter.com/wp/deliciko/wp-content/uploads/2019/06/flavour_bg.jpg');
+
+}
+.modal-content{
+    box-shadow: 0px 0px 15px -5px white;
+}
+
+a.title{
+    display: inline-block;
+    font-size: 55px;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 0px 0px 17px black;
+    text-decoration: underline;
+}
+
+@media (min-width: 576px) {
+    .modal-dialog {
+        /* max-width: 500px; */
+        margin: 1.75rem auto;
+        width: auto;
+        display: inline-block;
+}
+    .modal{
+    text-align: center}
+}
+
+.connect{
+    color: white;
+}
+.error{
+    color: #dd0f00;
+    font-weight: normal;
+    font-size: 20px;
+}
+.error>i{
+    font-size: 36px;
+}
+
+.remember_me{
+    display: inline-block;
+}
+
+form{
+    display: inline-block;
+    text-align: left;
+}
+form input, form textarea{
+    border-radius: 4px;
+    border: 1px #FF9800 solid;
+    text-indent: 10px;
+    outline: none;
+    box-shadow: 0px 0px 11px -5px #FFC107;
+    width: 100%;
+}
+form input[type=checkbox]{
+    display: inline-block;
+    width: initial;
+}
+
+
+form input[type=submit], button {
+    width: 100%;
+    border: 1px gray solid;
+    background-color: #bb7000;
+    color: white;
+    box-shadow: 0px 0px 10px 1px black;
+    padding: 7px;
+    text-shadow: 0px 0px 3px black;
+    margin-top: 6px;
+    outline: none;
+}
+form input[type=submit]:hover, button:hover{
+    border: 1px black solid;
+    transition: all .3s ease-in-out;
+}
+
+form label{
+    display: block;
+    color: #FFC107;
+    font-size: 18px;
+    margin-bottom: 0px;
+    margin-top: 20px;
+}
+
+table{
+    text-align: left;
+    color: white;
+    display: inline-block;
+    margin-top: 50px;
+}
+table>tbody>tr{
+    border-bottom: 1px gray solid;
+}
+
+.action{
+    white-space: nowrap;
+}
+
+table thead tr{
+    border-bottom: 1px #8e5605 solid;
+}
+
+table th{
+    color: orange;
+    font-weight: normal;
+    font-size: 20px;
+}
+table td{
+    font-size: 16px;
+}
+table td, table th{
+    padding-right: 20px;
+}
+table td:last-of-type, table th:last-of-type{
+    padding-right: 0px;
+}
+.action>i, .action>a{
+    margin-right: 20px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    font-size: 18px;
+    color: white;
+}
+.action>i:hover{
+    text-shadow: 2px 2px 4px black;
+}
+.burger{
+    max-width: 350px;
+    display: inline-block;
+    margin-top: 33px;
+    color: white;
+}
+.burger>h2 {
+    color: red;
+    font-size: 25px;
+}
+.burger>.price{
+    color: #007bff;
+    font-size: 42px;
+}
+.burger>.price>i{
+    color: white;
+    font-size: 24px;
+    width: 62px;
+    cursor: pointer;
+    text-shadow: 0px 0px 6px #FF9800;
+}
+.burger>.price>i:hover{
+
+}
+
+.burger>.price>span{
+    display: inline-block;
+    width: 150px;
+}
+.burger>.supplement{
+    color: orange;
+}
+
+
+.description{
+    font-family: Tahoma;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+.burgerimage{
+    text-align: center;
+    margin-top: 20px;
+}
+.burgerimage>img{
+    max-width: 150px;
+}
+
+.fa-trash:hover{
+    color :red;
+}
+.fa-wrench:hover{
+    color: green;
+}
+
+.addburger>i{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 43px;
+    color: #FF9800;
+    text-shadow: 0px 0px 3px black;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+.burger>.price>i:hover{
+    color: #FFEB3B;
+}
+
+.hidden{
+    display: none;
+}
+
+.titleburger {
+    color: #007bff;
+}
+
+button{
+    margin-top: 16px;
+    border-radius: 6px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
