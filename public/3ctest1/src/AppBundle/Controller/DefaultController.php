@@ -31,6 +31,11 @@ class DefaultController extends Controller
     /** @var EntityManagerInterface  */
     private $em;
 
+    /**
+     * DefaultController constructor.
+     * @param CsrfTokenManagerInterface $tokenManager
+     * @param EntityManagerInterface $em
+     */
     public function __construct(CsrfTokenManagerInterface $tokenManager,  EntityManagerInterface $em) {
         $this->tokenManager = $tokenManager;
         $this->em = $em;
@@ -180,10 +185,8 @@ class DefaultController extends Controller
                 $this->em->flush();
                 return $this->redirectToRoute('adminPage');
             }
-
             // Get all Burger arrray list
             $allBurgers = $this->em->getRepository(Burger::class)->getAllBurger();
-
         }
 
         /** @var $session Session */

@@ -33,6 +33,10 @@ class BurgerForm extends AbstractType
         $this->translator = $translator;
     }
 
+    /**
+     * @param FormBuilderInterface $builder
+     * @param array $options
+     */
     public function buildForm(FormBuilderInterface $builder, array $options) {
         $builder
             ->add('name', TextType::class, [

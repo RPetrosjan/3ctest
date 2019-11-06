@@ -6,19 +6,21 @@
      </div>
 
      {% if burger is defined %}
-         <div class="col-sm-12 text-center">
-             <div class="burger">
-                 <div id="idburger" class="hidden">{{ burger.id }}</div>
-                 <h2 class="name">{{ burger.name }}</h2>
-                 <div class="desc">{{ burger.desc }}</div>
-                 <div class="price">
-                    <i class="fas fa-chevron-left"></i>
-                         <span>{{ burger.price|raw }}</span>
-                    <i class="fas fa-chevron-right"></i>
-                 </div>
-                 <div class="supplement">Supplément <span>{{ burger.supp_double }}</span></div>
-              </div>
-         </div>
+         {% if burger.id is defined %}
+             <div class="col-sm-12 text-center">
+                 <div class="burger">
+                     <div id="idburger" class="hidden">{{ burger.id }}</div>
+                     <h2 class="name">{{ burger.name }}</h2>
+                     <div class="desc">{{ burger.desc }}</div>
+                     <div class="price">
+                        <i class="fas fa-chevron-left"></i>
+                             <span>{{ burger.price|raw }}</span>
+                        <i class="fas fa-chevron-right"></i>
+                     </div>
+                     <div class="supplement">Supplément <span>{{ burger.supp_double }}</span></div>
+                  </div>
+             </div>
+         {% endif %}
      {% endif %}
 
  {% endblock fos_user_content %}
